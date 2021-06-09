@@ -1,0 +1,31 @@
+- name: Install i3
+  pacman:
+    name: i3-gaps
+    state: present
+
+- name: Install Compositor
+  aur:
+    name: picom-ibhagwan-git
+    hash: c6b2c4a89c8fd6749037341d74fcb0fe95ee43ed
+    user: "{{ user.name }}"
+
+- name: Install polybar
+  aur:
+    name: polybar
+    hash: 1964a007ca17f25f4d361051127e41a895931633
+    user: "{{ user.name }}"
+
+- name: Install lockscreen
+  aur:
+    name: betterlockscreen
+    hash: 5bb4b4d676cd3f89d1bf4b5d09087e002795adcd
+    user: "{{ user.name }}"
+
+- name: Install additional stuff
+  pacman:
+    name:
+      - dunst
+      - rofi
+      - feh
+
+- import_tasks: dynamic_wallpaper.yml

@@ -7,10 +7,11 @@
   pacman:
     update_cache: yes
 
-- name: Set the hostname
-  hostname:
-    name: "{{ hostname }}"
-  when: hostname is defined
+      #- name: Set the hostname
+      #  hostname:
+      #    name: "{{ hostname }}"
+      #    use: "systemd"
+      #  when: hostname is defined
 
 - import_tasks: shell.yml
 - import_tasks: user.yml

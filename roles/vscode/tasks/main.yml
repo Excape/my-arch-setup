@@ -1,12 +1,12 @@
 ---
 - name: Install code
   aur:
-    name: visual-studio-code-bin
-    hash: bc28fbf699bbe37ce64ca7806fc210323aaeaa85
+    name: vscodium-bin
+    hash: 24e5f0018565d937b1ec5e09d1a1045d8c1413d7
     user: "{{ user.name }}"
 
 - name: Installing extensions
-  command: /usr/bin/code --install-extension {{ item }}
+  command: /usr/bin/codium --install-extension {{ item }}
   with_items: "{{ vscode_extensions }}"
   become: yes
   become_user: "{{ user.name }}"

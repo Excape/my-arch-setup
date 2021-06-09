@@ -1,0 +1,23 @@
+- name: clone dwall repo
+  git:
+    repo: https://github.com/adi1090x/dynamic-wallpaper.git
+    dest: "/tmp/dynamic-wallpaper"
+    update: no
+    version: '0d212e581b17f8330dca830f56475bf99f675897'
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: install dwall
+  shell:
+    chdir: "/tmp/dynamic-wallpaper"
+    cmd: chmod +x install.sh && ./install.sh
+    creates: /usr/bin/dwall
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: Setup dwall cron
+  cron:
+    name: "run dwall"
+    special_time: hourly
+    user: "{{ user.name }}"
+    job: "env PATH=/usr/local/bin:/usr/bin DISPLAY=:0 DESKTOP_SESSION=i3-with-shmlog DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/dwall -s lakeside"

@@ -1,6 +1,6 @@
 - name: Install scanning utilities
   pacman:
     name:
-      - sane
+      - sane-airscan
       - simple-scan
     state: present

@@ -10,16 +10,16 @@
 
 - name: Install canon cnijfilter2
   aur:
-    name: cnijfilter2-mg7500
-    hash: 99ff5dd3616a98f2792423748bb3311343714ade
+    name: cnijfilter2-mg7700
+    hash: 8f90f69839cba53a1a3570268a7a95781eda4647
     user: "{{ user.name }}"
   when: features is defined and "cnijfilter2" in features
 
-- name: Add MG7500 printer
-  copy:
-    src: Canon-MG7500.ppd
-    dest: /etc/cups/ppd/Canon-MG7500.ppd
-  when: features is defined and "cnijfilter2" in features
+# - name: Add MG7500 printer
+#   copy:
+#     src: Canon-MG7500.ppd
+#     dest: /etc/cups/ppd/Canon-MG7500.ppd
+#   when: features is defined and "cnijfilter2" in features
 
 - name: Add a print admin group
   group:

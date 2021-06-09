@@ -20,6 +20,8 @@ base_packages:
   - pacman-contrib
   - vim
   - git
+  - zsh
+  - fasd
   - python
   - python-pip
   - openssh
@@ -35,14 +37,15 @@ desktop_apps:
   base:
     - firefox
     - thunderbird
+    - thunar
     - qpdfview
     - libreoffice-fresh-de
-    - keepassxc
     - ntfs-3g
     - jq
   graphic:
     - gimp
     - inkscape
+    - maim
     - imagemagick
   media:
     - vlc
@@ -59,22 +62,26 @@ desktop_apps:
 desktop_apps_aur:
   base:
     - name: google-chrome
-      hash: a7c9ebaa9ae08b8e66944f610cb76a599487425b
+      hash: 4e2518c2cb5802cd49fd0a2bb83180320d4100cd
     - name: direnv
-      hash: 6f37e247d7c6b9b8f873dd53c547e4916d5df5b3
+      hash: 22ec859e0ae62744acf9658110aad765ece3444e
     - name: autojump
       hash: 22b96ef925fe122bfa374138442f031e10de138c
+    - name: protonmail-bridge
+      hash: 7a2a4cd904a7406b19446e0fed930dd13ab36fc7
+    - name: notable-bin
+      hash: 409df4079669883feb4bcaa1b4b7a9b675fe7d96
 
 # To update this list, use `code --list-extensions`
 vscode_extensions:
   - ms-python.python
   - ms-vscode.vscode-typescript-tslint-plugin
   - DavidAnson.vscode-markdownlint
-  - adamvoss.vscode-languagetool
-  - adamvoss.vscode-languagetool-de
-  - adamvoss.vscode-languagetool-en
+    # - adamvoss.vscode-languagetool
+    # - adamvoss.vscode-languagetool-de
+    # - adamvoss.vscode-languagetool-en
   - esbenp.prettier-vscode
-  - mikeburgh.xml-format
+    # - mikeburgh.xml-format
   - octref.vetur
   - coolbear.systemd-unit-file
   - streetsidesoftware.code-spell-checker
@@ -85,7 +92,7 @@ vscode_extensions:
   - vscoss.vscode-ansible
   - CoenraadS.bracket-pair-colorizer-2
   - EditorConfig.EditorConfig
-  - VisualStudioExptTeam.vscodeintellicode
+    # - VisualStudioExptTeam.vscodeintellicode
   - redhat.vscode-yaml
   - ms-azuretools.vscode-docker
   - msjsdiag.debugger-for-chrome
@@ -93,7 +100,7 @@ vscode_extensions:
 # - joaompinto.asciidoctor-vscode
 # - stayfool.vscode-asciidoc
 
-dotfiles: git@github.com:raphiz/dotfiles.git
+dotfiles:  git://github.com/Excape/dotfiles.git
 
 journal:
   max_size: 500M
@@ -108,6 +115,7 @@ base_fonts:
   - noto-fonts-emoji
   - noto-fonts-cjk
   - ttf-fira-mono
+  - ttf-fira-code
   - ttf-opensans
   - ttf-roboto
   - ttf-roboto-mono
@@ -121,3 +129,5 @@ aur_fonts:
     hash: e61fd6492fa0e94b4918778e7f5ec3bca9f2525a
   - name: ttf-ms-fonts
     hash: 4b3621d776c7090b7d42ff53e1aa0170e16477e5
+  - name: nerd-fonts-hack
+    hash: 570d51794e8964564c674b5a6d80db3f4f336db0

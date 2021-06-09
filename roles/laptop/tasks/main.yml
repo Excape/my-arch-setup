@@ -5,3 +5,13 @@
   copy:
     src: logind.conf
     dest: /etc/systemd/logind.conf
+
+- name: Copy lock on suspend service
+  copy:
+    src: suspend@.service
+    dest: /etc/systemd/system/suspend@.service
+
+- name: Enable lock on suspend service
+  service:
+    name: "suspend@{{ user.name }}"
+    enabled: yes

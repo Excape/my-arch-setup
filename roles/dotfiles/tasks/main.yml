@@ -5,13 +5,15 @@
   when: dotfiles is defined
 
 - name: Clone user dotfiles
-  git:
+  git: 
     repo: "{{ dotfiles }}"
-    dest: /home/{{ user.name }}/.dotfiles
+    dest: "/home/robin/.dotfiles"
+    key_file: "/home/robin/.ssh/id_rsa"
+    accept_hostkey: yes
     update: no
   when: dotfiles is defined and not dotfiles_directory.stat.exists
   become: yes
-  become_user: "{{ user.name }}"
+  become_user: "robin"
 
 - name: Install user dotfiles
   command: "bash /home/{{ user.name }}/.dotfiles/install"

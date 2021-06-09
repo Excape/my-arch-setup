@@ -27,6 +27,7 @@ $PASSWORD" | passwd
 # I don't know why, but this exits with 1 :/
 bootctl --path=/.efi install || true
 
+
 sed -i 's/HOOKS=(.*)/HOOKS=(base udev autodetect modconf block encrypt filesystems keyboard shutdown)/g' /etc/mkinitcpio.conf
 
 echo "title   Arch Linux
@@ -40,9 +41,9 @@ echo "timeout 3
 default EDGE
 editor no" > /.efi/loader/loader.conf
 
+
 echo "Generate initial ramdisk environment"
 mkinitcpio -p linux
-
 
 echo "Creating EDGE snapshot"
 btrfs subvolume snapshot / /.snapshots/EDGE
