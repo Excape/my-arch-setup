@@ -42,6 +42,7 @@ desktop_apps:
     - libreoffice-fresh-de
     - ntfs-3g
     - jq
+    - qalculate-gtk
   graphic:
     - gimp
     - inkscape
@@ -71,6 +72,10 @@ desktop_apps_aur:
       hash: 7a2a4cd904a7406b19446e0fed930dd13ab36fc7
     - name: notable-bin
       hash: 409df4079669883feb4bcaa1b4b7a9b675fe7d96
+    - name: intellij-idea-ultimate-edition
+      hash: 88b7549c433a7a2fbc9c6a3a17387f76e0e7bf98
+    - name: nvm
+      hash: 98091c0759162b1032722896d7443530151ab9c8
 
 # To update this list, use `code --list-extensions`
 vscode_extensions:
@@ -100,7 +105,7 @@ vscode_extensions:
 # - joaompinto.asciidoctor-vscode
 # - stayfool.vscode-asciidoc
 
-dotfiles:  git://github.com/Excape/dotfiles.git
+dotfiles: git://github.com/Excape/dotfiles.git
 
 journal:
   max_size: 500M

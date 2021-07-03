@@ -4,6 +4,5 @@
 /src
 /yay
 /.mypy_cache
-/hosts
 *.retry
 

@@ -1,0 +1,2 @@
+[local]
+trusty-servant ansible_connection=local

@@ -8,7 +8,7 @@
   git: 
     repo: "{{ dotfiles }}"
     dest: "/home/robin/.dotfiles"
-    key_file: "/home/robin/.ssh/id_rsa"
+    key_file: "/home/{{ user.name }}/.ssh/id_rsa"
     accept_hostkey: yes
     update: no
   when: dotfiles is defined and not dotfiles_directory.stat.exists
